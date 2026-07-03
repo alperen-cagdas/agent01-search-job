@@ -1,0 +1,19 @@
+{
+  "note": "Elle bakımı yapılan başlangıç listesi. Bu sandbox ortamının ağ politikası bu siteleri canlı doğrulamama izin vermedi; linkleri kullanmadan önce bir kez kontrol et ve gerekirse güncelle.",
+  "companies": [
+    { "name": "Arçelik", "url": "https://www.arcelikglobal.com", "note": "Beyaz eşya, OEM üretim" },
+    { "name": "Vestel", "url": "https://www.vestel.com.tr", "note": "Beyaz eşya / elektronik" },
+    { "name": "Beko", "url": "https://www.beko.com", "note": "Beyaz eşya" },
+    { "name": "Bosch", "url": "https://www.bosch.com.tr", "note": "Ev aletleri, endüstriyel tasarım" },
+    { "name": "Siemens", "url": "https://www.siemens.com/global/en/company/jobs.html", "note": "Endüstriyel tasarım, medikal cihaz" },
+    { "name": "Electrolux", "url": "https://www.electroluxgroup.com/en/careers", "note": "Beyaz eşya" },
+    { "name": "Whirlpool", "url": "https://www.whirlpoolcareers.com", "note": "Beyaz eşya" },
+    { "name": "Samsung Türkiye", "url": "https://www.samsung.com/tr", "note": "Elektronik, ürün tasarımı" },
+    { "name": "LG Türkiye", "url": "https://www.lg.com/tr", "note": "Elektronik, ürün tasarımı" },
+    { "name": "Philips", "url": "https://www.careers.philips.com", "note": "Sağlık teknolojisi, tıbbi cihaz tasarımı" },
+    { "name": "Haier", "url": "https://www.haier.com", "note": "Beyaz eşya (önceki staj tecrübesi)" },
+    { "name": "Baymak", "url": "https://www.baymak.com.tr", "note": "Isıtma/soğutma OEM üretim" },
+    { "name": "Getinge", "url": "https://www.getinge.com/int/careers", "note": "Tıbbi cihaz tasarımı" },
+    { "name": "Dräger", "url": "https://www.draeger.com/en-us_corp/careers", "note": "Tıbbi cihaz tasarımı" }
+  ]
+}

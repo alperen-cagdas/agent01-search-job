@@ -1,0 +1,11 @@
+{
+  "note": "LinkedIn otomatik taranmıyor (ToS gereği). Bunlar hazır arama linkleridir, elle tıklanır.",
+  "links": [
+    { "label": "Industrial Designer — Türkiye", "url": "https://www.linkedin.com/jobs/search/?keywords=industrial%20designer&location=Turkey" },
+    { "label": "Product Designer — Türkiye", "url": "https://www.linkedin.com/jobs/search/?keywords=product%20designer&location=Turkey" },
+    { "label": "Endüstriyel Tasarımcı — Türkiye", "url": "https://www.linkedin.com/jobs/search/?keywords=end%C3%BCstriyel%20tasar%C4%B1mc%C4%B1&location=Turkey" },
+    { "label": "Industrial Designer — Remote", "url": "https://www.linkedin.com/jobs/search/?keywords=industrial%20designer&location=Remote" },
+    { "label": "UX/UI Designer — Türkiye", "url": "https://www.linkedin.com/jobs/search/?keywords=ux%2Fui%20designer&location=Turkey" },
+    { "label": "CMF Designer — Remote", "url": "https://www.linkedin.com/jobs/search/?keywords=cmf%20designer&location=Remote" }
+  ]
+}

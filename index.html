@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alperen Çağdaş — İş Radarı</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>İş Radarı</h1>
+    <p class="subtitle">Endüstriyel/Ürün Tasarımı ve UX/UI ilanları — kariyer.net ve Indeed'den günlük olarak toplanır ve puanlanır.</p>
+    <p id="last-updated" class="last-updated">Yükleniyor…</p>
+    <div id="status-banner" class="status-banner" hidden></div>
+  </header>
+
+  <main>
+    <section id="jobs-section">
+      <h2>Eşleşen İlanlar</h2>
+      <div id="jobs-container">
+        <p class="loading">İlanlar yükleniyor…</p>
+      </div>
+    </section>
+
+    <section id="companies-section">
+      <h2>Doğrudan Başvurulabilecek Firmalar</h2>
+      <p class="section-note">Endüstriyel tasarım / beyaz eşya / OEM / tıbbi cihaz alanında kariyer sayfaları olan firmalar.</p>
+      <div id="companies-container"></div>
+    </section>
+
+    <section id="linkedin-section">
+      <h2>LinkedIn Hazır Arama Linkleri</h2>
+      <p class="section-note">LinkedIn otomatik taranmıyor (kullanım şartları buna izin vermiyor). Bu linklere tıklayıp elle göz atabilirsin.</p>
+      <div id="linkedin-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Bu sayfa her gün GitHub Actions ile otomatik güncellenir. Kaynaklar: kariyer.net (nazik/rate-limited tarama), Indeed (RSS). LinkedIn otomatik taranmaz.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+# Alperen Çağdaş'ın CV'sinden türetilmiş arama/puanlama profili.
+# Bu dosyayı elle düzenleyerek arama kapsamını ve puanlama ağırlıklarını değiştirebilirsin.
+
+role_keywords:
+  primary:
+    - endüstriyel tasarımcı
+    - endüstriyel tasarım
+    - ürün tasarımcı
+    - ürün tasarımı
+    - industrial designer
+    - industrial design
+    - product designer
+    - product design
+    - cmf designer
+    - cmf tasarımcı
+  secondary:
+    - ux designer
+    - ui designer
+    - ux/ui designer
+    - ux tasarımcı
+    - ui tasarımcı
+    - kullanıcı deneyimi tasarımcısı
+    - kullanıcı arayüzü tasarımcısı
+
+skill_keywords:
+  - solidworks
+  - fusion 360
+  - rhinoceros
+  - rhino 3d
+  - keyshot
+  - adobe illustrator
+  - adobe photoshop
+  - figma
+  - miro
+  - 3d printing
+  - 3d baskı
+  - prototipleme
+  - prototyping
+  - oem
+  - beyaz eşya
+  - home appliance
+  - ev aletleri
+  - medical device
+  - tıbbi cihaz
+  - render
+
+location_keywords:
+  preferred:
+    - türkiye
+    - turkey
+    - eskişehir
+    - istanbul
+    - bursa
+    - kocaeli
+    - remote
+    - uzaktan
+    - hybrid
+    - hibrit
+
+# Indeed RSS sorguları bu kombinasyonlarla kurulur (rol anahtar kelimesi x lokasyon).
+search_locations:
+  - "Türkiye"
+  - "Remote"
+
+weights:
+  primary_role_title_match: 10
+  primary_role_body_match: 5
+  secondary_role_match: 4
+  skill_keyword_match: 2
+  max_skill_bonus: 10
+  location_match: 3
+
+scoring:
+  minimum_score_threshold: 8
+  max_results_per_source: 50
+  max_total_results: 100
