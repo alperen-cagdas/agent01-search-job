@@ -54,4 +54,3 @@ bile Indeed sonuçları etkilenmeden yayınlanmaya devam eder.
 - `data/companies.json`: doğrudan başvurulabilecek firmalar — elle düzenle.
 - `data/linkedin_links.json`: LinkedIn arama linkleri — elle düzenle.
 - `config/profile.yaml`: arama anahtar kelimeleri ve puanlama ağırlıkları.
-- 
