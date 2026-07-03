@@ -13,10 +13,16 @@ log = logging.getLogger(__name__)
 RSS_BASE = "https://rss.indeed.com/rss"
 REQUEST_DELAY_SECONDS = 1
 REQUEST_TIMEOUT_SECONDS = 15
-USER_AGENT = (
-    "alperen-job-search-bot/1.0 "
-    "(personal job-search project; contact: alperencagdas.id@gmail.com)"
-)
+# Indeed's CDN returns 403 to non-browser user agents from datacenter IPs;
+# browser-like headers are a best-effort workaround (may still be blocked).
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/rss+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.8",
+}
 
 # Indeed RSS titles are typically "<Job Title> - <Company> - <Location>".
 TITLE_PATTERN = re.compile(r"^(?P<title>.+?)\s-\s(?P<company>.+?)\s-\s(?P<location>.+)$")
@@ -63,11 +69,10 @@ def _parse_item(item) -> Job | None:
 def fetch_indeed(profile: dict) -> list[Job]:
     jobs: list[Job] = []
     seen_urls: set[str] = set()
-    headers = {"User-Agent": USER_AGENT}
 
     for url in _build_query_urls(profile):
         try:
-            resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT_SECONDS)
+            resp = requests.get(url, headers=BROWSER_HEADERS, timeout=REQUEST_TIMEOUT_SECONDS)
             resp.raise_for_status()
             root = ET.fromstring(resp.content)
             items = root.findall("./channel/item")

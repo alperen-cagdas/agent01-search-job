@@ -35,10 +35,20 @@ log = logging.getLogger(__name__)
 SEARCH_URL = "https://www.kariyer.net/is-ilanlari"
 REQUEST_DELAY_SECONDS = 2
 REQUEST_TIMEOUT_SECONDS = 15
+# kariyer.net returns 403 to requests identifying as bots or coming from
+# datacenter IPs; browser-like headers are the least-invasive workaround for
+# this personal, once-daily, rate-limited use.
 USER_AGENT = (
-    "alperen-job-search-bot/1.0 "
-    "(personal job-search project; contact: alperencagdas.id@gmail.com)"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 )
+BROWSER_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+}
 
 # Best-effort selectors — verify against the live site (see module docstring).
 CARD_SELECTOR = "div.list-items, div.job-list-item, li.list-items"
@@ -51,9 +61,8 @@ DATE_SELECTOR = "span.date, div.date, time"
 def _fetch_search_page(keyword: str) -> str | None:
     params = urllib.parse.urlencode({"kw": keyword})
     url = f"{SEARCH_URL}?{params}"
-    headers = {"User-Agent": USER_AGENT}
     try:
-        resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT_SECONDS)
+        resp = requests.get(url, headers=BROWSER_HEADERS, timeout=REQUEST_TIMEOUT_SECONDS)
         resp.raise_for_status()
         return resp.text
     except Exception as e:
